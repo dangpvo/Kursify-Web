@@ -1,0 +1,8 @@
+@theme {
+  /* Custom variables for font sizes */
+  --home-heading-small: 28px;
+  --home-heading-small-line: 34px;
+
+  --home-heading-large: 48px;
+  --home-heading-large-line: 56px;
+}

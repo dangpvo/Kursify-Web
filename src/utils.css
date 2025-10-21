@@ -1,0 +1,10 @@
+/* Define custom utilities using Tailwind's new @utility syntax */
+@utility text-home-heading-small {
+  font-size: var(--home-heading-small);
+  line-height: var(--home-heading-small-line);
+}
+
+@utility text-home-heading-large {
+  font-size: var(--home-heading-large);
+  line-height: var(--home-heading-large-line);
+}
