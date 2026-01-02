@@ -2,8 +2,11 @@ import React from "react";
 import { assets } from "../../assets/assets";
 import { Link } from "react-router-dom";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+import { useCourse } from "../../context/AppContext";
 
 const Navbar = () => {
+  const { navigate } = useCourse();
+
   const isCourseListPage = location.pathname.includes("/course-list");
 
   const { openSignIn } = useClerk();
@@ -16,6 +19,7 @@ const Navbar = () => {
       }`}
     >
       <img
+        onClick={() => navigate("/")}
         src={assets.logo}
         alt="Logo"
         className="w-28 lg:w-40 cursor-pointer"

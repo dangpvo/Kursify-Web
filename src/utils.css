@@ -8,3 +8,7 @@
   font-size: var(--home-heading-large);
   line-height: var(--home-heading-large-line);
 }
+
+@utility grid-cols-auto {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
