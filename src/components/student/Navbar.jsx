@@ -5,7 +5,7 @@ import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
 import { useCourse } from "../../context/AppContext";
 
 const Navbar = () => {
-  const { navigate } = useCourse();
+  const { navigate, isEducator } = useCourse();
 
   const isCourseListPage = location.pathname.includes("/course-list");
 
@@ -28,10 +28,12 @@ const Navbar = () => {
       <div className="hidden md:flex items-center gap-5 text-green-500">
         <div className="flex items-center gap-5">
           {user && (
-            <button>
-              Become Educator |{" "}
-              <Link to={"/my-enrollments"}>My Enrollments</Link>
-            </button>
+            <>
+              <button onClick={() => navigate("/educator")}>
+                {isEducator ? "Educator Dashboard" : "Become Educator"}
+              </button>{" "}
+              |<Link to={"/my-enrollments"}>My Enrollments</Link>
+            </>
           )}
         </div>
         {user ? (
@@ -50,10 +52,12 @@ const Navbar = () => {
       <div className="md:hidden flex items-center gap-2 sm:gap-5 text-gray-500">
         <div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
           {user && (
-            <button>
-              Become Educator |{" "}
-              <Link to={"/my-enrollments"}>My Enrollments</Link>
-            </button>
+            <>
+              <button onClick={() => navigate("/educator")}>
+                {isEducator ? "Educator Dashboard" : "Become Educator"}
+              </button>{" "}
+              |<Link to={"/my-enrollments"}>My Enrollments</Link>
+            </>
           )}
           {user ? (
             <UserButton />
