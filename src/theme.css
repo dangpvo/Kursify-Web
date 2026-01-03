@@ -1,5 +1,8 @@
 @theme {
   /* Custom variables for font sizes */
+  --default: 15px;
+  --default-line: 21px;
+
   --home-heading-small: 28px;
   --home-heading-small-line: 34px;
 
