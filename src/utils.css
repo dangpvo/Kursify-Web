@@ -9,6 +9,20 @@
   line-height: var(--home-heading-large-line);
 }
 
+@utility text-course-details-heading-small {
+  font-size: var(--course-details-heading-small);
+  line-height: var(--course-details-heading-small-line);
+}
+
+@utility text-course-details-heading-large {
+  font-size: var(--course-details-heading-large);
+  line-height: var(--course-details-heading-large-line);
+}
+
 @utility grid-cols-auto {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@utility h-section-height {
+  height: 500px;
 }
