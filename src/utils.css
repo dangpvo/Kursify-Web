@@ -31,3 +31,11 @@
 @utility h-section-height {
   height: 500px;
 }
+
+@utility max-w-course-card {
+  max-width: var(--card-max-width);
+}
+
+@utility shadow-custom-card {
+  box-shadow: var(--card-shadow);
+}
