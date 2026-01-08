@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useCourse } from "../../context/AppContext";
 import Loading from "../../components/student/Loading";
 import { assets } from "../../assets/assets";
+import humanizeDuration from "humanize-duration";
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -15,11 +16,14 @@ const CourseDetails = () => {
   } = useCourse();
 
   const [courseData, setCourseData] = useState(null);
+  const [openSections, setOpenSections] = useState({});
 
   const fetchCourseData = async () => {
     const foundCourses = allCourses.find((course) => course._id === id);
     setCourseData(foundCourses);
   };
+
+  const toggleSection = (index) => {};
 
   useEffect(() => {
     fetchCourseData();
@@ -28,7 +32,7 @@ const CourseDetails = () => {
   return courseData ? (
     <>
       <div className="flex md:flex-row flex-col-reverse gap-10 relative items-start justify-between md:px-36 px-8 md:pt-30 pt-20 text-left">
-        <div className="absolute top-0 left-0 w-full h-section-height bg-gradient-to-b from-cyan-100/70 to-white"></div>
+        <div className="absolute top-0 left-0 w-full h-section-height"></div>
         <div className="max-w-xl z-10 text-gray-500">
           <h1 className="md:text-course-details-heading-large text-course-details-heading-small font-semibold text-gray-800">
             {courseData.courseTitle}
@@ -90,6 +94,38 @@ const CourseDetails = () => {
                       {chapter.chapterContent.length} lectures -{" "}
                       {calculateCourseChapterTime(chapter)}
                     </p>
+                  </div>
+                  <div className="overflow-hidden transition-all duration-300 max-h-96">
+                    <ul className="list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300">
+                      {chapter.chapterContent.map((lecture, index) => (
+                        <li
+                          key={"lecture " + index}
+                          className="flex items-start gap-2 py-1"
+                        >
+                          <img
+                            src={assets.play_icon}
+                            alt="play icon"
+                            className="w-4 h-4 m-1"
+                          />
+                          <div className="flex items-center justify-between w-full text-gray-800 text-xs md:text-default">
+                            <p>{lecture.lectureTitle}</p>
+                            <div className="flex gap-2">
+                              {lecture.isPreviewFree && (
+                                <p className="text-blue-500 cursor-pointer">
+                                  Preview
+                                </p>
+                              )}
+                              <p>
+                                {humanizeDuration(
+                                  lecture.lectureDuration * 60 * 1000,
+                                  { units: ["h", "m"] }
+                                )}
+                              </p>
+                            </div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
