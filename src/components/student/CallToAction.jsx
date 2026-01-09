@@ -14,10 +14,10 @@ const CallToAction = () => {
         molestias, reprehenderit sapiente quam quisquam cumque.
       </p>
       <div className="flex items-center font-medium gap-6 mt-4">
-        <button className="px-10 py-3 rounded-md text-white bg-[#B54100]">
+        <button className="px-10 py-3 rounded-md text-white bg-[#B54100] cursor-pointer">
           Get started
         </button>
-        <button className="flex items-center gap-2">
+        <button className="flex items-center gap-2 cursor-pointer">
           Learn more <img src={assets.arrow_icon} alt="arrow icon" />
         </button>
       </div>
