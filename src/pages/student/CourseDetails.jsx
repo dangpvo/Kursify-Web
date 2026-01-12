@@ -117,9 +117,9 @@ const CourseDetails = () => {
                     }`}
                   >
                     <ul className="list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300">
-                      {chapter.chapterContent.map((lecture, index) => (
+                      {chapter.chapterContent.map((lecture, lecIndex) => (
                         <li
-                          key={"lecture " + index}
+                          key={"lecture " + lecIndex}
                           className="flex items-start gap-2 py-1"
                         >
                           <img
