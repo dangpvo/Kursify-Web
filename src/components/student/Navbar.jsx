@@ -29,7 +29,10 @@ const Navbar = () => {
         <div className="flex items-center gap-5">
           {user && (
             <>
-              <button onClick={() => navigate("/educator")}>
+              <button
+                onClick={() => navigate("/educator")}
+                className="cursor-pointer"
+              >
                 {isEducator ? "Educator Dashboard" : "Become Educator"}
               </button>{" "}
               |<Link to={"/my-enrollments"}>My Enrollments</Link>
@@ -43,7 +46,7 @@ const Navbar = () => {
             className="bg-[#B54100] text-white px-5 py-2 rounded-full cursor-pointer"
             onClick={() => openSignIn()}
           >
-            Create Account
+            Login
           </button>
         )}
       </div>
@@ -53,7 +56,10 @@ const Navbar = () => {
         <div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
           {user && (
             <>
-              <button onClick={() => navigate("/educator")}>
+              <button
+                onClick={() => navigate("/educator")}
+                className="cursor-pointer"
+              >
                 {isEducator ? "Educator Dashboard" : "Become Educator"}
               </button>{" "}
               |<Link to={"/my-enrollments"}>My Enrollments</Link>
