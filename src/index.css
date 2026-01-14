@@ -3,6 +3,7 @@
 
 @import "./theme.css";
 @import "./utils.css";
+@import "quill/dist/quill.snow.css";
 
 * {
   font-family: Outfit;
