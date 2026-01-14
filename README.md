@@ -25,6 +25,7 @@
 - **State Management:** Context API
 - **Routing:** React Router
 - **Authentication:** Clerk
+- **Rich Text Editing:** Quill.js (course content creation)
 
 ## 📦 Installation
 
